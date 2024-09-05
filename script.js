@@ -3,6 +3,35 @@ const cityInput = document.querySelector(".cityInput")
 const card = document.querySelector(".card")
 const apiKey = "522d2454ddf943d0f5f9e433b627a6c9"
 
+// script.js
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+});
+
+// script.js - with a trail
+const trailCount = 10;
+const trails = [];
+
+for (let i = 0; i < trailCount; i++) {
+  const trail = document.createElement("div");
+  trail.classList.add("trail");
+  document.body.appendChild(trail);
+  trails.push(trail);
+}
+
+document.addEventListener("mousemove", (e) => {
+  trails.forEach((trail, index) => {
+    setTimeout(() => {
+      trail.style.left = `${e.pageX - trail.offsetWidth / 2}px`;
+      trail.style.top = `${e.pageY - trail.offsetHeight / 2}px`;
+    }, index * 50); // Delay for the trail effect
+  });
+});
+
+
 
 weatherForm.addEventListener("submit", async event =>{
     event.preventDefault();

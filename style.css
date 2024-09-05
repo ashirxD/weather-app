@@ -87,3 +87,37 @@ p{
     color: hsla(0, 0%, 0%, 0.856)
     
 }
+
+/* styles.css */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none; /* Hide default cursor */
+    background-color: hsl(202, 72%, 86%); /* Background for contrast */
+  }
+  
+  #cursor {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: hsla(143, 100%, 30%, 0.801); /* Neon color */
+    border-radius: 50%;
+    box-shadow: 0 0 15px hsla(143, 100%, 30%, 0.719), 
+                0 0 30px hsla(180, 100%, 40%, 0.514);
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+  }
+
+  .trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 255, 255, 0.5); /* Neon color */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 
+                0 0 20px rgba(0, 255, 255, 0.3);
+    pointer-events: none;
+  }
+  
+  
